@@ -6,6 +6,11 @@ run;
 proc sort data=sashelp.cars out=cars_sorted;
   by type MSRP;
 run;
+/* Step 3: Create mpg_avg */
+data cars_new;
+  set cars_sorted;
+  mpg_avg = (mpg_city + mpg_highway) / 2;
+run;
 
-proc print data=cars_sorted (obs=10);
+proc print data=cars_new (obs=10);
 run;
