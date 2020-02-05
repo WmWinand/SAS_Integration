@@ -14,6 +14,7 @@ run;
 
 proc print data=cars_new (obs=10);
 run;
+
 /* Step 4: Create Scatter Plot */
 
 	SYMBOL1
@@ -54,3 +55,13 @@ RUN; QUIT;
 %_eg_conditional_dropds(WORK.SORTTempTableSorted);
 TITLE; FOOTNOTE;
 GOPTIONS RESET = SYMBOL;
+
+/* Step 5: Create cars table where origin is just USA */ 
+data cars_usa;
+  set cars_new;
+  if origin = "USA";
+run;
+
+proc print data=cars_usa (obs=10);
+run;  
+  
