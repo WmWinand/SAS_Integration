@@ -68,5 +68,6 @@ proc sort data=cars_usa out=cars_usa_sorted;
 run;
 
 proc print data=cars_usa_sorted (obs=25);
+  var make model mpg_highway mpg_city; /* Step #8: limit vars in list rpt */
 run;  
   
