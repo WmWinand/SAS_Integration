@@ -62,6 +62,11 @@ data cars_usa;
   if origin = "USA";
 run;
 
-proc print data=cars_usa (obs=10);
+/*Step 6: sort cars usa by make and model*/
+proc sort data=cars_usa out=cars_usa_sorted;
+  by make model;
+run;
+
+proc print data=cars_usa_sorted (obs=25);
 run;  
   
