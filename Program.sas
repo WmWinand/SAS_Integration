@@ -94,4 +94,8 @@ NOHEADING
    End of task code
    ------------------------------------------------------------------- */
 RUN; QUIT;
+
+Proc print data=sashelp.cars (obs=10);
+  var origin make model;
+run;  
   
