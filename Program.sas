@@ -95,7 +95,4 @@ NOHEADING
    ------------------------------------------------------------------- */
 RUN; QUIT;
 
-Proc print data=sashelp.cars (obs=10);
-  var origin make model;
-run;  
-  
+/* GET RID OF PROC PRINT */
