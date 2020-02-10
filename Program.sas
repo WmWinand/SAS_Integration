@@ -56,11 +56,6 @@ RUN; QUIT;
 TITLE; FOOTNOTE;
 GOPTIONS RESET = SYMBOL;
 
-/* Step 5: Create cars table where origin is just USA */ 
-data cars_usa;
-  set cars_new;
-  if origin = "USA" and type = "SUV"; /* Step #7 - add type to filter */
-run;
 
 /*Step 6: sort cars usa by make and model*/
 proc sort data=cars_usa out=cars_usa_sorted;
