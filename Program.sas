@@ -59,7 +59,7 @@ GOPTIONS RESET = SYMBOL;
 
 /*Step 6: sort cars usa by make and model*/
 proc sort data=cars_usa out=cars_usa_sorted;
-  by make model;
+  by make;
 run;
 
 /* Step 8 - reduce obs to list to 10 */
