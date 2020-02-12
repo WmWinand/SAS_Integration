@@ -12,7 +12,7 @@ data cars_new;
   mpg_avg = (mpg_city + mpg_highway) / 2;
 run;
 
-proc print data=cars_new (obs=10);
+proc print data=cars_new (obs=25);
 run;
 
 /* Step 4: Create Scatter Plot */
@@ -58,12 +58,12 @@ GOPTIONS RESET = SYMBOL;
 
 
 /*Step 6: sort cars usa by make and model*/
-proc sort data=cars_usa out=cars_usa_sorted;
+proc sort data=cars_new out=cars_new_sorted;
   by make;
 run;
 
 /* Step 8 - reduce obs to list to 10 */
-proc print data=cars_usa_sorted (obs=10);
+proc print data=cars_new_sorted (obs=10);
   var make model mpg_highway mpg_city; /* Step #8: limit vars in list rpt */
 run;  
 
