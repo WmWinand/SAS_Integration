@@ -12,3 +12,7 @@ run;
 proc freq data=cars_new;
   tables origin;
 run;
+
+proc freq data=cars_new;
+  tables type;
+run;  
